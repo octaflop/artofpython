@@ -7,11 +7,14 @@ from pygments.formatters import HtmlFormatter
 db = {
     'slides': [
         {
-        'id': 'prestitle',
+        'id': 'home',
         'animation': 'slide',
         'x': '-1000',
         'y': '-1500',
-        'scale': 1,
+        'z': '0',
+        'rotate_x': '-10',
+        'rotate_y': '-40',
+        'scale': 10,
         'content': """
             <q>Aren't you just <b>bored</b> with all those slides-based presentations?</q>
             {code}
@@ -22,7 +25,9 @@ db = {
         'animation': 'slide',
         'x': '0',
         'y': '-1500',
-        'scale': 1,
+        'rotate_x': '-100',
+        'rotate_y': '-40',
+        'scale': 2,
         'content': """
             <q>Don't you think that presentations given <strong>in modern browsers</strong> shouldn't <strong>copy the limits</strong> of 'classic' slide decks?</q>
         """

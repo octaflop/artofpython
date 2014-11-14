@@ -45,7 +45,17 @@
 <div id="impress">
 
   {% for slide in slides %}
-  <div id="{{ slide.id }}" class="step {{ slide.animation }}" data-x="{{ slide.x }}" data-y="{{ slide.y }}">
+  <div 
+  id="{{ slide.id }}" 
+  class="step {{ slide.animation }}" 
+  data-x="{{ slide.x }}" 
+  data-y="{{ slide.y }}"
+  data-z="{{ slide.z }}"
+  data-rotate="{{ rotate_z }}"
+  data-rotate-x="{{ rotate_x }}"
+  data-rotate-y="{{ rotate_y }}"
+  data-rotate-z="{{ rotate_z }}"
+  >
   {{ slide.content|safe }}
   </div>
   {% endfor %}
