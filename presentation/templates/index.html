@@ -1,13 +1,22 @@
 <!doctype html>
+<html lang="en-us">
 <head>
+  <meta charset="utf-8">    
+  <meta name="viewport" content="width=1024" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>
     {{ presentation }}
   </title>
+
+  <meta name="description" content="{{ description }}" />
+  <meta name="author" content="{{ author }}" />
+
   <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Special+Elite|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-  <script type="text/javascript" src="{{ impress }}"></script>
+
   <style>
     body, p {
       font-family: 'Droid Sans', sans-serif;
+      font-size: 2.5em;
     }
     h1, h2, h3 {
       font-family: 'Special Elite', cursive;
@@ -15,9 +24,45 @@
     code, pre {
       font-family: 'Inconsolata', ;
     }
+
+    .fallback-message { display:none; }
+    .impress-not-supported .no-support-message { display:block; }
   </style>
+
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
 
-<body>
-Hello World {{ author }}
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+  {% for slide in slides %}
+  <div id="{{ slide.id }}" class="step {{ slide.animation }}" data-x="{{ slide.x }}" data-y="{{ slide.y }}">
+  {{ slide.content|safe }}
+  </div>
+  {% endfor %}
+
+  <div class="step slide" data-x="1000" data-y="-1500">
+    <q>Would you like to <strong>impress your audience</strong> with <strong>stunning visualization</strong> of your talk?</q>
+  </div>
+
+  <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+    <span class="try">then you should try</span>
+    <h1>impress.js<sup>*</sup></h1>
+    <span class="footnote"><sup>*</sup> no rhyme intended</span>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="{{ impress }}"></script>
+<script type="text/javascript">
+  impress().init();
+</script>
 </body>
+</html>
