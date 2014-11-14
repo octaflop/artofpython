@@ -21,3 +21,7 @@ mkvirtualenv -p /usr/bin/python3.4
 ```bash
 bower install bartaz/impress.js
 ```
+
+4. Start the main app via `python presentation/app.py`
+
+
