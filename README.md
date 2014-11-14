@@ -16,7 +16,7 @@ sudo apt-get install python-3.4
 mkvirtualenv -p /usr/bin/python3.4
 ```
 
-3. Install impressjs via bower
+3. Install impressjs via [bower](http://bower.io/)
 
 ```bash
 bower install bartaz/impress.js
