@@ -1,5 +1,9 @@
 # encoding: utf-8
 
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
+
 db = {
     'slides': [
         {
@@ -10,7 +14,8 @@ db = {
         'scale': 1,
         'content': """
             <q>Aren't you just <b>bored</b> with all those slides-based presentations?</q>
-        """
+            {code}
+        """.format(code=highlight('print("Hello World")', PythonLexer(), HtmlFormatter()))
         },
         {
         'id': '',
