@@ -60,3 +60,5 @@ bower_components
 # Vim swap
 .*.swp
 
+# sublime workspace
+artpy.sublime-workspace
