@@ -2,7 +2,11 @@
 
 A presentation for the 2014 SLCPython meetup
 
-## Basic instructions (linux-oriented)
+## Examples
+
+![fractals](art/turtle/img/fractals.png "an example of koch fractals with turtle")
+
+## Basic setup instructions (linux-oriented)
 
 0. Install python 3.4
 
@@ -23,5 +27,6 @@ bower install bartaz/impress.js
 ```
 
 4. Start the main app via `python presentation/app.py`
+
 
 
