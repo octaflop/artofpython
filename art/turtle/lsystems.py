@@ -1,4 +1,4 @@
-'''
+"""
 Bernie's L System demo in Python.
 
 This program implements a simple context free L System,
@@ -74,8 +74,8 @@ variables to functions, here is an example:
    , '[': lambda obj : obj.push()
    , ']': lambda obj : obj.pop()
    }
+"""
 
-'''
 
 import sys
 # import the turtle graphics library
@@ -126,7 +126,7 @@ def demo1():
    bushy_tree().run(5,vis)
 
 def bushy_tree():
-    return LSystem(['F -> FF-[-F+F+F]+[+F-F-F]'])
+    return LSystem(["F -> FF-[-F+F+F]+[+F-F-F]"])
 
 def demo2():
    def init():
@@ -234,12 +234,12 @@ def peano_curve():
    return LSystem(rules)
 
 class LSystem(object):
-   def __init__ (self, rules):
+   def __init__(self, rules):
       if len(rules) > 0:
          for r in rules:
             exec(compile(r)) in locals()
-         firstRuleName,_ = decomposeRule(rules[0])
-         exec('def start(n): return ' + firstRuleName + '(n)') in locals()
+         firstRuleName, _ = decomposeRule(rules[0])
+         exec('def start(n): return {0}(n)'.format(firstRuleName)) in locals()
          self.rule = start
       else:
          self.rule = lambda _ : ''
@@ -301,7 +301,7 @@ def initPosition(mover=lambda width, height : (0, -height/2)):
    goto (mover (width, height))
    down()
 
-'''
+"""
 The input rule:
  
    X -> X+X+F
@@ -315,7 +315,7 @@ is compiled to:
           return ''.join([xn,'+',xn,'+',fn])
        else:
           return 'X'
-'''
+"""
 
 def compile(rule):
    (name, body) = decomposeRule(rule)
@@ -326,32 +326,35 @@ def compile(rule):
    ifHead = 'if n > 0:' 
    ifBody = varBinds + ['return ' + joinListPart]
    elsePart = 'else: return ' + quote(name)
-   return '\n'.join(
-      [defPart] + map(indent,
-         [ifHead] + map(indent,
-            ifBody) + [elsePart]))
+   return '\n'.join("{0}{1}".format(
+      [defPart], map(indent, "{0}{1}{2}".format([ifHead], map(indent, ifBody),
+          [elsePart]))))
 
 def decomposeRule(rule):
    splitRule = rule.split('->')
    if len(splitRule) != 2:
-      raise Exception("badly formed L-System rule: " + quote(str(rule)))
+      raise Exception("badly formed L-System rule:\
+              {0}".format(quote(str(rule))))
    name = splitRule[0].strip()
    body = splitRule[1].strip()
    if len(name) != 1 or len(body) == 0:
-      raise Exception("badly formed L-System rule: " + quote(str(rule)))
+      raise Exception("badly formed L-System rule:\
+              {0}".format(quote(str(rule))))
    return (name, body)
 
 def mkVarBind(var):
-   return var.lower() + 'n = ' + var + '(n-1)'
+    return var.lower() + 'n = {0}(n-1)'.format(var)
 
-def quote(str): return "'" + str + "'"
+def quote(inputstr): 
+    return "'{0}'".format(inputstr)
 
-def indent(str): return '   ' + str
+def indent(inputstr): 
+    return "'   '{0}".format(inputstr)
 
-def varsIds(str):
+def varsIds(inputstr):
    vars = set()
    list = []
-   for c in str:
+   for c in inputstr:
       if c.isupper():
          vars.add(c)
          list.append(c.lower()+'n')
