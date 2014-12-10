@@ -2,8 +2,8 @@
 
 import turtle as t
 
-iteration = 6
-length = 6
+iteration = 8
+length = 2 
 
 def left_hilbert(length, width):
     if length == 0:
@@ -35,5 +35,19 @@ def right_hilbert(length, width):
     left_hilbert(length - 1, width)
     t.left(90)
 
-left_hilbert(iteration, length)
+if __name__ == '__main__':
+    # setup
+    # t.hideturtle()
+    t.speed(0)
+    # t.up()
+    # t.setpos([-800, 0])
+    # t.setup(width=800, height=800)
+    t.title("hilbert")
+    # draw
+    t.down()
+    left_hilbert(iteration, length)
+    # bye!
+    t.done()
+    t.bye()
+
 
