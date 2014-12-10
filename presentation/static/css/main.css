@@ -1,0 +1,23 @@
+body, p {
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 1px #fff;
+}
+body {
+  background: radial-gradient(
+    rgb(150, 176, 242),
+    rgb(170, 150, 242));
+    /*rgb(136, 132, 204),*/
+    /*rgb(129, 106, 204));*/
+    /*rgb(39, 20, 166));*/
+    /*rgb(55, 169, 204));*/
+}
+h1, h2, h3 {
+  font-family: 'Special Elite', cursive;
+}
+code, pre {
+  font-family: 'Inconsolata', monospace;
+}
+
+.fallback-message { display:none; }
+.impress-not-supported .no-support-message { display:block; }
