@@ -1,5 +1,12 @@
 from utils import render_code
 
+branching = """
+def branch(length=100):
+    …
+    branch(length * 0.6)
+    …
+"""
+
 db = {
     'slides': [
         {
@@ -18,21 +25,6 @@ db = {
           <h3>2014-12-10</h3>
           """
         },
-        # {
-        #   'id': 'art',
-        #   'animation': 'slide',
-        #   'x': '0',
-        #   'y': '1000',
-        #   'z': '-500',
-        #   'rotate': '0',
-        #   'rotate_x': '180',
-        #   'rotate_y': '180',
-        #   'scale': 0,
-        #   'content': """
-        #     <q>Aren’t you just <b>bored</b> with all those slides-based presentations?</q>
-        #     {code}
-        #   """.format(code=render_code('[x.first_name, x.last_name for x in people]'))
-        # },
         {
           'id': 'paintbrush',
           'animation': 'slide',
@@ -94,6 +86,36 @@ db = {
             <h2>Fractal Dimensions</h2>
             <img src='/static/img/dimensions.png' />
           """
+        },
+        {
+          'id': 'drawsome',
+          'animation': 'slide',
+          'x': '4500',
+          'y': '-4500',
+          'z': '4500',
+          'rotate': '145',
+          'rotate_x': '0',
+          'rotate_y': '45',
+          'scale': 0,
+          'content': """
+            <h2>Let’s draw some fractals!</h2>
+          """
+        },
+        {
+          'id': 'basicbranching',
+          'animation': 'slide',
+          'x': '5500',
+          'y': '-5500',
+          'z': '5500',
+          'rotate': '245',
+          'rotate_x': '24',
+          'rotate_y': '145',
+          'scale': 0,
+          'content': """
+            <h2>Basic Branching</h2>
+            <img src='/static/img/branching.png' />
+            {code}
+          """.format(code=render_code(branching))
         },
         {
           'id': 'resources',
