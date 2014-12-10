@@ -23,12 +23,12 @@ if __name__ == "__main__":
     t.hideturtle()
     t.speed(0)
     t.up()
-    size = 350
+    size = 550
     t.setup(width=size, height=size)
     t.title("Koch fractals")
     t.setpos([-(size/2), 0])
     t.down()
-    draw_koch(4, size)
+    draw_koch(5, size)
     save_a_png(t, "img/fractals")
     t.done()
     t.bye()
