@@ -81,6 +81,21 @@ db = {
           """
         },
         {
+          'id': 'fractaldimensions',
+          'animation': 'slide',
+          'x': '3500',
+          'y': '-3500',
+          'z': '3500',
+          'rotate': '145',
+          'rotate_x': '0',
+          'rotate_y': '45',
+          'scale': 0,
+          'content': """
+            <h2>Fractal Dimensions</h2>
+            <img src='/static/img/dimensions.png' />
+          """
+        },
+        {
           'id': 'resources',
           'animation': 'slide',
           'x': '0',
