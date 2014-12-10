@@ -18,33 +18,67 @@ db = {
           <h3>2014-12-10</h3>
           """
         },
+        # {
+        #   'id': 'art',
+        #   'animation': 'slide',
+        #   'x': '0',
+        #   'y': '1000',
+        #   'z': '-500',
+        #   'rotate': '0',
+        #   'rotate_x': '180',
+        #   'rotate_y': '180',
+        #   'scale': 0,
+        #   'content': """
+        #     <q>Aren’t you just <b>bored</b> with all those slides-based presentations?</q>
+        #     {code}
+        #   """.format(code=render_code('[x.first_name, x.last_name for x in people]'))
+        # },
         {
-          'id': 'art',
+          'id': 'paintbrush',
           'animation': 'slide',
-          'x': '0',
-          'y': '1000',
-          'z': '-500',
-          'rotate': '0',
-          'rotate_x': '180',
-          'rotate_y': '180',
+          'x': '1000',
+          'y': '1500',
+          'z': '1500',
+          'rotate': '145',
+          'rotate_x': '0',
+          'rotate_y': '45',
           'scale': 0,
           'content': """
-            <q>Aren’t you just <b>bored</b> with all those slides-based presentations?</q>
-            {code}
-          """.format(code=render_code('[x.first_name, x.last_name for x in people]'))
+            <h2>Our Paintbrush</h2>
+            <h2><code>{code}</code></h2>
+            <small>(available in python 2.7 &amp; 3.4)</small>
+          """.format(code=render_code('import turtle as t'))
         },
         {
-        'id': '',
-        'animation': 'slide',
-        'x': '0',
-        'y': '-1500',
-        'rotate_x': '-100',
-        'rotate_y': '-40',
-        'scale': 2,
-        'content': """
-            <q>Don’t you think that presentations given <strong>in modern browsers</strong> 
-            shouldn’t <strong>copy the limits</strong> of ‘classic’ slide decks?</q>
-        """
+          'id': 'fractals',
+          'animation': 'slide',
+          'x': '1500',
+          'y': '-1500',
+          'z': '1500',
+          'rotate': '145',
+          'rotate_x': '0',
+          'rotate_y': '45',
+          'scale': 0,
+          'content': """
+            <h2>Fractals</h2>
+            <img src='/static/img/broccoli.jpg' />
+          """
+        },
+        {
+          'id': 'morefractals',
+          'animation': 'slide',
+          'x': '2500',
+          'y': '-2500',
+          'z': '2500',
+          'rotate': '145',
+          'rotate_x': '0',
+          'rotate_y': '45',
+          'scale': 0,
+          'content': """
+            <h2>Fractal Curves</h2>
+            <img src='/static/img/coral.png' />
+            <!-- <img src='/static/img/DragonCurve_animation.gif' />-->
+          """
         },
         {
           'id': 'resources',
