@@ -7,6 +7,28 @@ def branch(length=100):
     …
 """
 
+nodereplacement = """
+def left_hilbert(length, width):
+    …
+    right_hilbert(length - 1, width)
+    …
+    left_hilbert(length - 1, width)
+    …
+    left_hilbert(length - 1, width)
+    …
+    right_hilbert(length - 1, width)
+"""
+
+lsystems = """
+def X(n): 
+  if n > 0:
+      xn = X(n-1)
+      fn = F(n-1)
+      return ''.join([xn,'+',xn,'+',fn])
+  else:
+      return 'X'
+"""
+
 db = {
     'slides': [
         {
@@ -116,6 +138,38 @@ db = {
             <img src='/static/img/branching.png' />
             {code}
           """.format(code=render_code(branching))
+        },
+        {
+          'id': 'nodereplacement',
+          'animation': 'slide',
+          'x': '7500',
+          'y': '-7500',
+          'z': '7500',
+          'rotate': '45',
+          'rotate_x': '4',
+          'rotate_y': '45',
+          'scale': 0,
+          'content': """
+            <h2>Node Replacement</h2>
+            <img src='/static/img/nodereplacement.png' />
+            <small>{code}</small>
+          """.format(code=render_code(nodereplacement))
+        },
+        {
+          'id': 'lsystems',
+          'animation': 'slide',
+          'x': '8500',
+          'y': '-8500',
+          'z': '8500',
+          'rotate': '145',
+          'rotate_x': '40',
+          'rotate_y': '145',
+          'scale': 0,
+          'content': """
+            <h2>L-Systems</h2>
+            <img src='/static/img/lsystems.png' />
+            <small>{code}</small>
+          """.format(code=render_code(lsystems))
         },
         {
           'id': 'resources',
